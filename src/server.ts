@@ -32,7 +32,7 @@ import {filterImageFromURL, deleteLocalFiles, isImage} from './util/util';
     let imageUrl = requestObj.query.image_url;
 
     if(isImage(imageUrl) == false){
-      return responseObj.status(400).send("Not a url of an image.")
+      return responseObj.status(422).send("Not a url of an image.")
     }
 
     let filteredImagePath = await filterImageFromURL(imageUrl);
