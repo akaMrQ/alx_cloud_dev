@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "c835da07-a8c9-4559-9e47-1e65d0d943f8",
+		"name": "Cloud Developer Nano Degree",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22856666"
+	},
+	"item": [
+		{
+			"name": "filter image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}/filteredimage?image_url=https://www.shutterstock.com/image-illustration/mobile-virtual-reality-user-3d-600w-685831765.jpg",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://www.shutterstock.com/image-illustration/mobile-virtual-reality-user-3d-600w-685831765.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "localhost:8082",
+			"type": "string"
+		}
+	]
+}
