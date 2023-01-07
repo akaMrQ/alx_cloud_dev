@@ -13,9 +13,8 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
     try {
       console.debug(`Fetching image from ${inputURL}`);
 
-      const photo = await Jimp.read(inputURL);
-      const outpath =
-        "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
+      const photo = await Jimp.read(await downloadImage(inputURL));
+      const outpath = "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
       console.debug(`storing filtered image to ${outpath}`);
       await photo
         .resize(256, 256) // resize
@@ -44,4 +43,12 @@ export async function deleteLocalFiles(files: Array<string>) {
     console.debug(`deleting file ${file}`)
     fs.unlinkSync(file);
   }
+}
+
+
+const downloadImage = async (url : string) => {
+  const response = await fetch(url);
+  const arrayBuffer = await response.arrayBuffer();
+
+  return Buffer.from(arrayBuffer);
 }
