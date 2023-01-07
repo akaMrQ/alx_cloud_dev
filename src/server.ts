@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
+
 (async () => {
 
   // Init the Express application
@@ -26,6 +27,25 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //    image_url: URL of a publicly accessible image
   // RETURNS
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
+
+
+  app.get('/filteredimage', async (requestObj, responseObj) => {
+
+    if (requestObj.query.hasOwnProperty('image_url') == false){
+      return responseObj.status(400).send("No image url was provided. Please update request with query parameter image_url={{URL}}")
+    }
+
+    let imageUrl = requestObj.query.image_url;
+
+    let filteredImage = await filterImageFromURL(imageUrl);
+    let state = responseObj.status(200).send(filteredImage).finished
+
+    if(state){
+      await deleteLocalFiles([filteredImage])
+    }
+
+    return responseObj
+  });
 
   /**************************************************************************** */
 
