@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import {filterImageFromURL, deleteLocalFiles, isImage} from './util/util';
 
 
 (async () => {
@@ -14,6 +14,14 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
+  // image filter endpoint
+  // takes in an image url,
+  // filters image,
+  // returns a filtered image
+  // INPUTS
+  //    inputURL: string - a publicly accessible url to an image file
+  // RETURNS
+  //    a filtered image
   app.get('/filteredimage', async (requestObj, responseObj) => {
 
     if (requestObj.query.hasOwnProperty('image_url') == false){
@@ -22,6 +30,11 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     }
 
     let imageUrl = requestObj.query.image_url;
+
+    if(isImage(imageUrl) == false){
+      return responseObj.status(400).send("Not a url of an image.")
+    }
+
     let filteredImagePath = await filterImageFromURL(imageUrl);
     responseObj.status(200).sendFile(filteredImagePath);
 

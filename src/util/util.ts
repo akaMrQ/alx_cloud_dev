@@ -12,6 +12,7 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
   return new Promise(async (resolve, reject) => {
     try {
       console.debug(`Fetching image from ${inputURL}`);
+
       const photo = await Jimp.read(inputURL);
       const outpath =
         "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
@@ -20,13 +21,17 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
         .resize(256, 256) // resize
         .quality(60) // set JPEG quality
         .greyscale() // set greyscale
-        .write(__dirname + outpath, (img) => {
+        .write(__dirname + outpath, () => {
           resolve(__dirname + outpath);
         });
     } catch (error) {
       reject(error);
     }
   });
+}
+
+export function isImage(url:string) {
+  return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
 }
 
 // deleteLocalFiles
