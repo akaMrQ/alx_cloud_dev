@@ -24,4 +24,5 @@ Image filtering microservice is part of Udagram a simple cloud application devel
    2. Run the development server with `npm run dev`
 3) Open rest client (see optional download [Postman](https://www.postman.com/downloads/) if you don't have one)
    1. Import _ndcd.postman_collection.json_ into Postman ( see [import collection](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/))
-   2. Execute desired request(s)
+   2. Add preferred authentication ( for now it just if auth header exist, to be enhanced for token auth in future.)
+   3. Execute desired request(s)

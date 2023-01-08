@@ -12,8 +12,13 @@ import {filterImageFromURL, deleteLocalFiles, isImage} from './util/util';
   const port = process.env.PORT || 8082;
   
   // Use the body parser middleware for post requests
-  app.use(bodyParser.json());
-
+  app.use(function(req, res, next) {
+    if (!req.headers.authorization) {
+      return res.status(403).json({ error: 'No credentials sent!' });
+    }
+    next();
+    app.use(bodyParser.json());
+  });
   // image filter endpoint
   // takes in an image url,
   // filters image,
