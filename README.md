@@ -6,7 +6,7 @@ Image filtering microservice is part of Udagram a simple cloud application devel
 [GitHub Repo](https://github.com/akaMrQ/alx_cloud_dev.git)
 
 ### Host
-[AWS Elastic Beanstalk]()
+[AWS Elastic Beanstalk](http://project-dev.us-east-1.elasticbeanstalk.com)
 
 ### Requirements and software
 * Required 
