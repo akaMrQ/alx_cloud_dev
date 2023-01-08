@@ -9,13 +9,23 @@
 		{
 			"name": "filter image",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkVEQjhBMjcwMjQ3NTA0RTNENkIzRkUwRUYzNkI4NzNGNkRDOEFERTlSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6IjdiaWljQ1IxQk9QV3NfNE84MnVIUDIzSXJlayJ9.eyJuYmYiOjE2NzE0MzA1MDQsImV4cCI6MTY3MTQ0NDkwNCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kZXYuc2F0YXhpLWNsb3VkLmNvLnphIiwiYXVkIjpbImJiZC52YW5ndWFyZC5zZXJ2aWNlcy5zZWN1cml0eSIsInZnZC53ZiIsInZnZC5jbSIsInZnZC5jcyIsInNhdC50ZWwiLCJzYXQuZmluIiwic2F0LnZnLmNzYyIsInNhdC52Zy5zaGFyZWQiLCJzYXQuaW5zIiwic2F0LnZlaCIsInNhdC5tYXJrZXRpbmciXSwiY2xpZW50X2lkIjoiYmJkLnZhbmd1YXJkLnVpLndlYi5kZXYiLCJzdWIiOiJ2YW5ndWFyZFxcamthbW1leWVyQHNhdGF4aS5jby56YSIsImF1dGhfdGltZSI6MTY3MTQzMDUwMywiaWRwIjoiYWFkIiwic2lkIjoiQUNDMDU5MkZERTAzRjZEQUI5QTM4QUMwRUEzNTcxRUEiLCJpYXQiOjE2NzE0MzA1MDQsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJiYmQudmFuZ3VhcmQuc2VydmljZXMuc2VjdXJpdHkiLCJ2Z2Qud2YiLCJ2Z2QuY20iLCJ2Z2QuY3MiLCJzYXQudGVsIiwic2F0LmZpbiIsInNhdC52Zy5jc2MiLCJzYXQudmcuc2hhcmVkIiwic2F0LmlucyIsInNhdC52ZWgiLCJzYXQubWFya2V0aW5nIl0sImFtciI6WyJleHRlcm5hbCJdfQ.caWqN37BYoVweEEucTZ-mnuRibhFycI07qrUD472y0Z9cS0Toj9MN9ktMiYHv4muZmAYG_eIr-lVsQFktCEaohgMWyut2G7r5vUhqfrHfpD0g2qznNRQHkIPbUSCa9-0dRnchMpApcJ-5CjZOXyPT-Z2sgniMlgix-62XlS-acTG1u6j0NpwzUFMWMs1z_z93hI_xiTy8bwsZfx4CQAKigKokyRo6HGWZ84AIXn-sGgem1afVTclLROFRIbGEqjLSCnOOQtOdujwRvvfFL5G2JOq0Cye7aKeMl6FEdj0Z7rAsD1T2i8OCu-EnWUTu0QpPTh4r1MLcBMGfCoW4WlETUoxQO_0Zx42FDQ8d1uiTDvmoa7Gs9Yg03nL1N7zJ_fRAGS-HFZPJ44WnLiB5WsXUXZPbaY_pVL552QdLOFf8PrpJbBDudLwGlEAh4TOO6tGMGLmKAqipr-X68htCmUGl2P8dMYniuckpoVxyv_8pv5MmtA6FSJJA4u4C7Cc8hTdK3snsm6iA0O-HixylrQDxbmQ3cgAiocBYoMCNW4gd2-3lTSYIqYFQgzxpUsw_tS9JMlBoDespRd1vHXp8fJMCF3qDMh6qW68Sslsnp_Gv7W_Bv_NaxM_BH5ZrCqREiku-53SiuOa9TiiQ6CYT7JOzmkgB-hyR6iuOVFJH9tF2lo",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/filteredimage?image_url=https://www.shutterstock.com/image-illustration/mobile-virtual-reality-user-3d-600w-685831765.jpg",
+					"raw": "http://{{HOST_LOCAL}}/filteredimage?image_url=https://www.shutterstock.com/image-illustration/mobile-virtual-reality-user-3d-600w-685831765.jpg",
 					"protocol": "http",
 					"host": [
-						"{{HOST}}"
+						"{{HOST_LOCAL}}"
 					],
 					"path": [
 						"filteredimage"
@@ -24,6 +34,40 @@
 						{
 							"key": "image_url",
 							"value": "https://www.shutterstock.com/image-illustration/mobile-virtual-reality-user-3d-600w-685831765.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter image large",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkVEQjhBMjcwMjQ3NTA0RTNENkIzRkUwRUYzNkI4NzNGNkRDOEFERTlSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6IjdiaWljQ1IxQk9QV3NfNE84MnVIUDIzSXJlayJ9.eyJuYmYiOjE2NzE0MzA1MDQsImV4cCI6MTY3MTQ0NDkwNCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kZXYuc2F0YXhpLWNsb3VkLmNvLnphIiwiYXVkIjpbImJiZC52YW5ndWFyZC5zZXJ2aWNlcy5zZWN1cml0eSIsInZnZC53ZiIsInZnZC5jbSIsInZnZC5jcyIsInNhdC50ZWwiLCJzYXQuZmluIiwic2F0LnZnLmNzYyIsInNhdC52Zy5zaGFyZWQiLCJzYXQuaW5zIiwic2F0LnZlaCIsInNhdC5tYXJrZXRpbmciXSwiY2xpZW50X2lkIjoiYmJkLnZhbmd1YXJkLnVpLndlYi5kZXYiLCJzdWIiOiJ2YW5ndWFyZFxcamthbW1leWVyQHNhdGF4aS5jby56YSIsImF1dGhfdGltZSI6MTY3MTQzMDUwMywiaWRwIjoiYWFkIiwic2lkIjoiQUNDMDU5MkZERTAzRjZEQUI5QTM4QUMwRUEzNTcxRUEiLCJpYXQiOjE2NzE0MzA1MDQsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJiYmQudmFuZ3VhcmQuc2VydmljZXMuc2VjdXJpdHkiLCJ2Z2Qud2YiLCJ2Z2QuY20iLCJ2Z2QuY3MiLCJzYXQudGVsIiwic2F0LmZpbiIsInNhdC52Zy5jc2MiLCJzYXQudmcuc2hhcmVkIiwic2F0LmlucyIsInNhdC52ZWgiLCJzYXQubWFya2V0aW5nIl0sImFtciI6WyJleHRlcm5hbCJdfQ.caWqN37BYoVweEEucTZ-mnuRibhFycI07qrUD472y0Z9cS0Toj9MN9ktMiYHv4muZmAYG_eIr-lVsQFktCEaohgMWyut2G7r5vUhqfrHfpD0g2qznNRQHkIPbUSCa9-0dRnchMpApcJ-5CjZOXyPT-Z2sgniMlgix-62XlS-acTG1u6j0NpwzUFMWMs1z_z93hI_xiTy8bwsZfx4CQAKigKokyRo6HGWZ84AIXn-sGgem1afVTclLROFRIbGEqjLSCnOOQtOdujwRvvfFL5G2JOq0Cye7aKeMl6FEdj0Z7rAsD1T2i8OCu-EnWUTu0QpPTh4r1MLcBMGfCoW4WlETUoxQO_0Zx42FDQ8d1uiTDvmoa7Gs9Yg03nL1N7zJ_fRAGS-HFZPJ44WnLiB5WsXUXZPbaY_pVL552QdLOFf8PrpJbBDudLwGlEAh4TOO6tGMGLmKAqipr-X68htCmUGl2P8dMYniuckpoVxyv_8pv5MmtA6FSJJA4u4C7Cc8hTdK3snsm6iA0O-HixylrQDxbmQ3cgAiocBYoMCNW4gd2-3lTSYIqYFQgzxpUsw_tS9JMlBoDespRd1vHXp8fJMCF3qDMh6qW68Sslsnp_Gv7W_Bv_NaxM_BH5ZrCqREiku-53SiuOa9TiiQ6CYT7JOzmkgB-hyR6iuOVFJH9tF2lo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST_REMOTE}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+					"protocol": "http",
+					"host": [
+						"{{HOST_REMOTE}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
 						}
 					]
 				}
@@ -53,8 +97,13 @@
 	],
 	"variable": [
 		{
-			"key": "HOST",
+			"key": "HOST_LOCAL",
 			"value": "localhost:8082",
+			"type": "string"
+		},
+		{
+			"key": "HOST_REMOTE",
+			"value": "project-dev.us-east-1.elasticbeanstalk.com",
 			"type": "string"
 		}
 	]
