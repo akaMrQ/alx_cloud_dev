@@ -29,7 +29,7 @@ import {filterImageFromURL, deleteLocalFiles, isImage} from './util/util';
       return responseObj.status(400).send("No image url was provided. Please update request with query parameter image_url={{URL}}")
     }
 
-    let imageUrl = requestObj.query.image_url;
+    let imageUrl : string = requestObj.query.image_url.toString();
 
     if(isImage(imageUrl) == false){
       return responseObj.status(422).send("Not a url of an image.")

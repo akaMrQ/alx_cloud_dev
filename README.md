@@ -9,10 +9,13 @@ Image filtering microservice is part of Udagram a simple cloud application devel
 [AWS Elastic Beanstalk]()
 
 ### Requirements and software
-* Required [NodeJS](https://nodejs.org/en/download/)
-* Required [AWS EB CLI](https://github.com/aws/aws-elastic-beanstalk-cli-setup)
-* Optional [NVM](https://github.com/nvm-sh/nvm)
-* Optional [Postman](https://www.postman.com/downloads/)
+* Required 
+  * [NodeJS](https://nodejs.org/en/download/)
+  * [AWS EB CLI](https://github.com/aws/aws-elastic-beanstalk-cli-setup)
+* Optional (Required on windows) [UnixUtils](https://sourceforge.net/projects/unxutils/)
+* Optional 
+  * [NVM](https://github.com/nvm-sh/nvm)
+  * [Postman](https://www.postman.com/downloads/)
 
 ### Setup and run
 1) Clone repo at [GitHub Repo](https://github.com/akaMrQ/alx_cloud_dev.git)
