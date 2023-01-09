@@ -12,19 +12,20 @@ import fetch from 'node-fetch';
 export async function filterImageFromURL(inputURL: string): Promise<string> {
   return new Promise(async (resolve, reject) => {
     try {
-      console.debug(`Fetching image from ${inputURL}`);
+      const outpath : string = "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
 
-      const photo = await Jimp.read(await downloadImage(inputURL));
-      const outpath = "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
+      console.debug(`Fetching image from ${inputURL}`);
+      const photo : Jimp = await Jimp.read(await downloadImage(inputURL));
+
       console.debug(`storing filtered image to ${outpath}`);
-      await photo
+      photo
         .resize(256, 256) // resize
         .quality(60) // set JPEG quality
         .greyscale() // set greyscale
         .write(__dirname + outpath, () => {
           resolve(__dirname + outpath);
         });
-    } catch (error) {
+    } catch (error: any) {
       reject(error);
     }
   });
